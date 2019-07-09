@@ -1,0 +1,9 @@
+#root {
+    background-image: url(../images/soil.jpg);
+    background-size: cover;
+}
+
+.registerBox{
+text-align: center;
+text-emphasis-color: #0e0d0d;
+}
