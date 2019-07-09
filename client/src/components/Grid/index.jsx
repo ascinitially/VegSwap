@@ -1,16 +1,18 @@
 ﻿import React, { Component } from "react";
 // import classnames from "classnames";
 import GridComponent from "./GridComponent";
-// import WarningMessage from "../WarningMessage";
-import GreyBox from "../images/GreyBox.svg";
+import WarningMessage from "../WarningMessage";
+import GreyBox from "../../images/GreyBox.svg";
 // import styles from "./grid.module.css";
-import CONSTANTS from "../constants";
+import CONSTANTS from "../../constants";
 import backgrdimg from "./backgrd.jpg";
 import logo from "./veggieswap.png";
 import veggiemain from "./veggiemain.jpg";
 import veggiehand from "./handwithveggies.jpg";
 import carrotswoman from "./womanwithcarrots.jpg";
 import { Slide } from 'react-slideshow-image';
+
+
 
 
 // slideshow properties
@@ -40,13 +42,14 @@ const Slideshow = () => {
     return (
       <Slide {...properties}>
         <div className="each-slide">
+        
           <div style={{'backgroundImage': `url(${slideImages[0]})`,
                         'height': 500,
                         'background-size': 'cover',
                         'background-repeat': 'no-repeat',
                       
         }}>
-            <span>Slide 1</span>
+              <span class="title">TRADE VEGGIES</span>
           </div>
         </div>
         <div className="each-slide" style={slideStyle}>
@@ -57,7 +60,7 @@ const Slideshow = () => {
                       'background-size': 'cover',
                       
         }}>
-            <span>Slide 2</span>
+            <span class="title">GROW A COMMUNITY</span>
           </div>
         </div>
         <div className="each-slide" style={slideStyle}>
@@ -67,7 +70,7 @@ const Slideshow = () => {
                       'background-repeat': 'no-repeat',
                       'object-fit': 'fill',
         }}>
-            <span>Slide 3</span>
+            <span class="title">MEET YOUR NEIGHBORS</span>
           </div>
         </div>
       </Slide>
@@ -114,8 +117,8 @@ export default class Grid extends Component {
   render() {
     const {
       gridTextAssets,
-      // WarningMessageOpen,
-      // WarningMessageText
+      WarningMessageOpen,
+      WarningMessageText
     } = this.state;
     return (
       <main id="mainContent">
@@ -160,7 +163,7 @@ export default class Grid extends Component {
           backgroundRepeat: "no-repeat"
         }}>
           <div className="row justify-content-center py-5">
-            <h1>Bootstrap Grid Template</h1>
+            <h1>Current Offers</h1>
           </div>
 
           <div className="row justify-content-around text-center pb-5">
@@ -169,16 +172,16 @@ export default class Grid extends Component {
                 key={textAssets.id}
                 header={textAssets.title}
                 description={textAssets.shortDescription}
-                image={GreyBox}
+                
               />
             ))}
           </div>
         </div>
-        {/* <WarningMessage
+        <WarningMessage
           open={WarningMessageOpen}
           text={WarningMessageText}
           onWarningClose={this.handleWarningClose}
-        /> */}
+        />
       </main>
     );
   }

@@ -1,13 +1,17 @@
 ﻿import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHandHolding } from '@fortawesome/free-solid-svg-icons';
+ 
 
 export default function GridComponent(props) {
-  const { image, header, description } = props;
+  const { header, description } = props;
   return (
     <div className="col-md-4 col-sm-12 p-5">
-      <img src={image} alt="Default Grey Box" className="mb-3" />
+      <FontAwesomeIcon icon={faHandHolding}  size="6x"/>
+      <i className={'fa fa-hand-holding'} ></i>
       <h3>{header}</h3>
       <p>{description}</p>
-      <h1>HELLO WORLD</h1>
+      <h1>User</h1>
     </div>
   );
 }
