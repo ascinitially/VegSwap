@@ -1,11 +1,11 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
+// import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
-import UploadScreen from './Uploadscreen';
-import '../src/css/Login.css';
+// import UploadScreen from './Uploadscreen';
+import "../components/css/Login.css";
 import './css/util.css';
 
 
@@ -28,13 +28,13 @@ handleClick(event) {
     axios.post(apiBaseUrl+'login', payload)
     .then(function (response) {
     console.log(response);
-    if(response.data.code == 200){
-    console.log("Login successfull");
-    var uploadScreen=[];
-    uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
-    self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
-    }
-    else if(response.data.code == 204){
+    // if(response.data.code == 200){
+    // console.log("Login successfull");
+    // var uploadScreen=[];
+    // uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
+    // self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
+    // }
+    if(response.data.code == 204){
     console.log("Username password do not match");
     alert("username password do not match")
     }

@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
 import Login from './Login';
-import './App.css';
+import './css/App.css';
 import './css/Register.css';
 
 class Register extends Component {
