@@ -2,9 +2,9 @@
 // import classnames from "classnames";
 import GridComponent from "./GridComponent";
 import WarningMessage from "../WarningMessage";
-import GreyBox from "../../images/GreyBox.svg";
+// import GreyBox from "../../images/GreyBox.svg";
 // import styles from "./grid.module.css";
-import CONSTANTS from "../../constants";
+import CONSTANTS from "./../constants";
 import backgrdimg from "./backgrd.jpg";
 import logo from "./veggieswap.png";
 import veggiemain from "./veggiemain.jpg";
