@@ -14,7 +14,7 @@ function App() {
  <React.Fragment>
         <NavBar />
         <Switch>
-          <Redirect exact path = "/" to = "/Grid" />
+          <Redirect exact path = "/" to = "/" />
           <Route path = "/Grid" component = { Grid } />
           <Route path = "/Login" component = { Loginscreen } />
           <Route path = "/Register" component = { Register } />
