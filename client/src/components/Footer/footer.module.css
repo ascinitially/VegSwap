@@ -1,15 +1,17 @@
 ﻿.footer {
   background-color: #1d1d1d;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
+
 }
 
 .title {
-  color: #fff;
+  color: rgb(34, 29, 29);
 }
 
 .description {
-  color: #fff;
+  color: rgb(22, 20, 20);
+  font-size: 20px;
+  text-shadow: #f1eded;
+  text-emphasis-color: #f1eded;
 }
 
 .footerlink,

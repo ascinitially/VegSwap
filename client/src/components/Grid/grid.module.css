@@ -7,3 +7,9 @@
 .title{
   text-align: center;
 }
+
+
+.hand:hover{
+  color: red;
+
+}

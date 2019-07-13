@@ -1,4 +1,5 @@
 ﻿import React, { Component } from "react";
+import FormComponent from "../Form/FormComponent";
 // import classnames from "classnames";
 import GridComponent from "./GridComponent";
 import WarningMessage from "../WarningMessage";
@@ -11,6 +12,7 @@ import veggiemain from "./veggiemain.jpg";
 import veggiehand from "./handwithveggies.jpg";
 import carrotswoman from "./womanwithcarrots.jpg";
 import { Slide } from 'react-slideshow-image';
+// import handwithsmallplant from "./handwithsmallplant.jpg";
 
 
 
@@ -89,6 +91,7 @@ export default class Grid extends Component {
     this.handleWarningClose = this.handleWarningClose.bind(this);
   }
 
+
   // Get the text sample data from the back end
   componentDidMount() {
     fetch(CONSTANTS.ENDPOINT.GRID)
@@ -102,7 +105,7 @@ export default class Grid extends Component {
       .catch(error =>
         this.setState({
           WarningMessageOpen: true,
-          WarningMessageText: `Request to get grid text failed: ${error}`
+          // WarningMessageText: `Request to get grid text failed: ${error}`
         })
       );
   }
@@ -121,7 +124,9 @@ export default class Grid extends Component {
       WarningMessageText
     } = this.state;
     return (
-      <main id="mainContent">
+      <main id="mainContent" style = {{
+        position: "relative",
+      }}>
         <div className= "text-center" style = {{
             backgroundImage: `url(${logo})`,
             backgroundRepeat: "no-repeat",
@@ -131,31 +136,9 @@ export default class Grid extends Component {
           }}>
 
         </div>
-  
-
-
-  
             <Slideshow>
 
             </Slideshow>
-            
-       
-
-
-
-           
-
-
-
-          
-          
-       
-         
-         
-
-          
-       
-
         <div className="container" style= {{
           backgroundImage: `url(${backgrdimg})`,
           backgroundPosition: "center",
@@ -166,7 +149,7 @@ export default class Grid extends Component {
             <h1>Current Offers</h1>
           </div>
 
-          <div className="row justify-content-around text-center pb-5">
+          <div className="row pb-5">
             {gridTextAssets.map(textAssets => (
               <GridComponent
                 key={textAssets.id}
@@ -182,7 +165,51 @@ export default class Grid extends Component {
           text={WarningMessageText}
           onWarningClose={this.handleWarningClose}
         />
+         {/* <div style={{
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0,0,0,.5)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          flex: 1,
+          zIndex: 1000,
+        }}>
+          Modal Data
+        </div> */}
+
+
+        <div className="container" style= {{
+          // backgroundImage: `url(${handwithsmallplant})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat"
+        }}>
+          <div className="row justify-content-center py-5">
+            <h1>Make an Offer!</h1>
+
+            <div className="row pb-5">
+            {gridTextAssets.map(textAssets => (
+              <FormComponent
+                key={textAssets.id}
+                header={textAssets.title}
+                description={textAssets.shortDescription}
+                
+              />
+            ))}
+          </div>
+            
+          </div>
+          </div>
+        
+
       </main>
+
     );
   }
 }
