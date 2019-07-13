@@ -6,31 +6,13 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className="container-fluid">
         <div className="row justify-content-around">
-          <div className="col-8 col-md-5">
+          <div className="col-6 col-md-2">
             <h5 className={styles.title}>VeggieSwapV2</h5>
             <p className={styles.description}>
-              This is placeholder text. Your web app description goes here.
+              The app to a healthier, happier, veggie-loving you!
             </p>
           </div>
-          <div className="col-2">
-            <ul className="list-unstyled">
-              <li>
-                <a className={styles.footerlink} href="/">
-                  Example Link
-                </a>
-              </li>
-              <li>
-                <a className={styles.footerlink} href="/">
-                  Example Link
-                </a>
-              </li>
-              <li>
-                <a className={styles.footerlink} href="/">
-                  Example Link
-                </a>
-              </li>
-            </ul>
-          </div>
+          
         </div>
       </div>
     </footer>
