@@ -11,16 +11,16 @@ export default function NavBar() {
         <div class="w3-row w3-large w3-black" style = {styles.navBar}>
 
             <div class="w3-col s3">
-                <Link to ="#" class="w3-button w3-block" style = {styles.linkStyles}>Home</Link>
+                <Link to ="/" class="w3-button w3-block" style = {styles.linkStyles}>Home</Link>
             </div>
             <div class="w3-col s3">
-                <a href="#offers" class="w3-button w3-block" style = {styles.linkStyles}>Current Offers</a>
+                <a href="Offers" class="w3-button w3-block" style = {styles.linkStyles}>Current Offers</a>
             </div>
             <div class="w3-col s3">
-                <a href="#makeoffer" class="w3-button w3-block" style = {styles.linkStyles}>Make an Offer</a>
+                <a href="Makeoffer" class="w3-button w3-block" style = {styles.linkStyles}>Make an Offer</a>
             </div>
             <div class="w3-col s3">
-                <a href="#login" class="w3-button w3-git block" style = {styles.linkStyles}>Log In or Register</a>
+                <a href="Login" class="w3-button w3-git block" style = {styles.linkStyles}>Log In or Register</a>
             </div>
         </div>
     </div>
