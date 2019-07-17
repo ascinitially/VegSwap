@@ -149,7 +149,7 @@ export default class Grid extends Component {
             <h1>Current Offers</h1>
           </div>
 
-          <div className="row pb-5">
+          <div className="row pb-5 justify-content-center">
             {gridTextAssets.map(textAssets => (
               <GridComponent
                 key={textAssets.id}
@@ -186,14 +186,22 @@ export default class Grid extends Component {
 
         <div className="container" style= {{
           // backgroundImage: `url(${handwithsmallplant})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat"
+          // backgroundPosition: "center",
+          // backgroundSize: "cover",
+          // backgroundRepeat: "no-repeat"
         }}>
-          <div className="row justify-content-center py-5">
+          <div className="makeoffertitle" style = {{
+            textAlign: "center",
+            backgroundImage: `url(${backgrdimg})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat"
+          }}>
             <h1>Make an Offer!</h1>
+            <br></br>
+            <br></br>
 
-            <div className="row pb-5">
+            <div className="justify-content-center">
             {gridTextAssets.map(textAssets => (
               <FormComponent
                 key={textAssets.id}

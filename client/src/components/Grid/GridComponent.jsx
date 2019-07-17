@@ -16,49 +16,52 @@ export default class GridComponent extends React.Component {
   }
   componentDidMount() {
     // go to database to get offer, asking, username
-    const dummyOffers = [
-      {
-        id: 1,
-        userName: "Alex",
-        location: {
-          latitude: 150,
-          longitude: 200,
-        },
-        offering: "Asparagus",
-        asking: "Tomatoes",
-        detail: "13lbs",
-        contact: "alex@gmail.com"
-      },
-      {
-        id: 2,
-        userName: "Brady",
-        location: {
-          latitude: 150,
-          longitude: 200,
-        },
-        offering: "Carrots",
-        asking: "Tomatoes",
-        detail: "25lbs",
-        contact: "brady@gmail.com"
-      },
-      {
-        id: 3,
-        userName: "Tom",
-        location: {
-          latitude: 150,
-          longitude: 200,
-        },
-        offering: "Kale",
-        asking: "Celery",
-        detail: "15lbs",
-        contact: "tom@gmail.com"
-      },
-    ];
-    if (dummyOffers.length > 0) {
-      this.setState({
-        offers: dummyOffers
-      })
-    }
+    // const dummyOffers = [
+    //   {
+    //     id: 1,
+    //     userName: "Alex",
+       
+    //     },
+    //     offering: "Asparagus",
+    //     asking: "Tomatoes",
+    //     detail: "13lbs",
+    //     contact: "alex@gmail.com"
+    //   },
+    //   {
+    //     id: 2,
+    //     userName: "Brady",
+    //     location: {
+    //       latitude: 150,
+    //       longitude: 200,
+    //     },
+    //     offering: "Carrots",
+    //     asking: "Tomatoes",
+    //     detail: "25lbs",
+    //     contact: "brady@gmail.com"
+    //   },
+    //   {
+    //     id: 3,
+    //     userName: "Tom",
+    //     location: {
+    //       latitude: 150,
+    //       longitude: 200,
+    //     },
+    //     offering: "Kale",
+    //     asking: "Celery",
+    //     detail: "15lbs",
+    //     contact: "tom@gmail.com"
+    //   },
+    // ];
+    fetch("/api/vegswap").then(res => res.json()).then(
+      data => {
+        if (data.length > 0) {
+          this.setState({
+            offers: data
+          })
+        }
+      }
+    )
+    
 
   }
   showOfferDetails = offer => {
@@ -128,8 +131,8 @@ export default class GridComponent extends React.Component {
           <div style={inlineStyles.modalContainer}>
           <div style={inlineStyles.modalinnerContainer}>
             {/* <p>Location: {this.state.offer.location} </p> */}
-            <p> Details: {this.state.selectedOffer.detail}</p>
-            <p>Contact: {this.state.selectedOffer.contact}</p>
+            <p> Details: {this.state.selectedOffer.offering}</p>
+            <p>Contact: {this.state.selectedOffer.userName}</p>
             <button onClick={()=> this.setState({openModal: false, isOfferReady: false})} 
             style={inlineStyles.dismissButton}>X</button>
           </div>
